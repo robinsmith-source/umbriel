@@ -1468,6 +1468,8 @@ namespace umbriel {
     return preferRecentPeer(scrollingVertical() ? focusWithinLane(direction) : focusAlongStrip(direction));
   }
 
+  View* Workspace::focusStrip(int direction) const { return preferRecentPeer(focusAlongStrip(direction)); }
+
   View* Workspace::focusVertical(int direction) const {
     return preferRecentPeer(scrollingVertical() ? focusAlongStrip(direction) : focusWithinLane(direction));
   }

@@ -204,6 +204,8 @@ namespace umbriel {
     ScratchpadWindowShowPrevious,
     LayoutToggleSplit,
     OutputSdrWhite,
+    WindowFocusStripNext,
+    WindowFocusStripPrevious,
     Count,
   };
 

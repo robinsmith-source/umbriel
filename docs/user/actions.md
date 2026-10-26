@@ -101,6 +101,8 @@ active portal session. Be careful with window following because focusing a priva
 | `window-focus-or-workspace-up` | Focus up, or the previous workspace at the edge |
 | `window-focus-previous` | Focus the previous window in layout order |
 | `window-focus-right` | Focus the window to the right |
+| `window-focus-strip-next` | Focus the next window along the scrolling strip |
+| `window-focus-strip-previous` | Focus the previous window along the scrolling strip |
 | `window-focus-switch-floating` | Focus the last window of the opposite floating state |
 | `window-focus-up` | Focus the next window up in the column |
 | `window-focus-warp:<window-id>` | Focus or reveal a window and warp the cursor to it |

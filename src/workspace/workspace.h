@@ -172,6 +172,7 @@ namespace umbriel {
     void syncViewPresentation(View* view);
     [[nodiscard]] View* focusAdjacent(int direction) const;
     [[nodiscard]] View* focusVertical(int direction) const;
+    [[nodiscard]] View* focusStrip(int direction) const;
     [[nodiscard]] View* focusFirstColumn() const;
     [[nodiscard]] View* focusLastColumn() const;
     [[nodiscard]] View* focusReplacementForRemoval(const View* view) const;

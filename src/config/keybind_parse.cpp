@@ -420,6 +420,10 @@ namespace umbriel {
          KeybindAction::WindowFocusOrWorkspaceUp},
         {"window-focus-previous", "", "Focus the previous window in layout order", KeybindAction::WindowFocusPrevious},
         {"window-focus-right", "", "Focus the window to the right", KeybindAction::WindowFocusRight},
+        {"window-focus-strip-next", "", "Focus the next window along the scrolling strip",
+         KeybindAction::WindowFocusStripNext},
+        {"window-focus-strip-previous", "", "Focus the previous window along the scrolling strip",
+         KeybindAction::WindowFocusStripPrevious},
         {"window-focus-switch-floating", "", "Focus the last window of the opposite floating state",
          KeybindAction::WindowFocusSwitchFloating},
         {"window-focus-up", "", "Focus the next window up in the column", KeybindAction::WindowFocusUp},
@@ -1035,19 +1039,19 @@ namespace umbriel {
       addWorkspace(KeybindAction::WindowMoveToWorkspace, keypad, WLR_MODIFIER_SHIFT);
     }
 
-    // Default wheel binds: Mod+WheelUp = window-focus-left, Mod+WheelDown = window-focus-right.
+    // Default wheel binds step along the strip, so they behave the same on landscape and portrait outputs.
     {
       Keybind wheel;
       wheel.useMod = true;
       wheel.wheel = WheelDirection::Up;
-      wheel.action = KeybindAction::WindowFocusLeft;
+      wheel.action = KeybindAction::WindowFocusStripPrevious;
       keybinds.push_back(std::move(wheel));
     }
     {
       Keybind wheel;
       wheel.useMod = true;
       wheel.wheel = WheelDirection::Down;
-      wheel.action = KeybindAction::WindowFocusRight;
+      wheel.action = KeybindAction::WindowFocusStripNext;
       keybinds.push_back(std::move(wheel));
     }
 

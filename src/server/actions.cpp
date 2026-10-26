@@ -785,6 +785,19 @@ namespace umbriel {
       return true;
     }
 
+    template <int Direction> bool actionFocusStrip(Server& server, const Keybind& bind, std::string* /*error*/) {
+      if (bind.wheel != WheelDirection::None && tiledDragActive(server)) {
+        scrollActiveLayout<Direction>(server, 2);
+        return true;
+      }
+      if (Workspace* workspace = windowActionWorkspace(server)) {
+        if (View* target = workspace->focusStrip(Direction)) {
+          focusWindowFromNavigation(server, target);
+        }
+      }
+      return true;
+    }
+
     template <int Direction> bool actionFocusAdjacent(Server& server, const Keybind& bind, std::string* /*error*/) {
       if (bind.wheel != WheelDirection::None && tiledDragActive(server)) {
         scrollActiveLayout<Direction>(server, 2);
@@ -2242,6 +2255,8 @@ namespace umbriel {
         &actionScratchpadWindowShowStep<-1>,
         &actionLayoutToggleSplit,
         &actionOutputSdrWhite,
+        &actionFocusStrip<1>,
+        &actionFocusStrip<-1>,
     };
 
     consteval bool everyActionHasHandler() {

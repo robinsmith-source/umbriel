@@ -207,8 +207,8 @@ Any non-modifier key or mouse button closes it. Normal bound actions still run.
 ## Example: scroll-wheel navigation
 
 ```toml
-"Mod+WheelUp" = "window-focus-left"
-"Mod+WheelDown" = "window-focus-right"
+"Mod+WheelUp" = "window-focus-strip-previous"
+"Mod+WheelDown" = "window-focus-strip-next"
 "Mod+Shift+WheelUp" = "column-move-left"
 "Mod+Shift+WheelDown" = "column-move-right"
 ```

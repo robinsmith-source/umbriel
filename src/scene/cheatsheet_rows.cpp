@@ -383,6 +383,8 @@ namespace {
     case A::WindowFocusOrOutputUp:
     case A::WindowFocusOrOutputDown:
     case A::WindowFocusNext:
+    case A::WindowFocusStripNext:
+    case A::WindowFocusStripPrevious:
     case A::WindowFocusPrevious:
     case A::WindowFocusId:
     case A::WindowFocusWarpId:

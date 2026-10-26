@@ -450,6 +450,10 @@ UMBRIEL_TEST(parsesArgumentFreeNewActions) {
   CHECK(bind.action == KeybindAction::LayoutMasterCountDecrease);
   CHECK(!parseAction("master-count-increase", bind)); // unknown name
 
+  CHECK(parseAction("window-focus-strip-next", bind));
+  CHECK(bind.action == KeybindAction::WindowFocusStripNext);
+  CHECK(parseAction("window-focus-strip-previous", bind));
+  CHECK(bind.action == KeybindAction::WindowFocusStripPrevious);
   CHECK(parseAction("window-focus-last", bind));
   CHECK(bind.action == KeybindAction::WindowFocusLast);
   CHECK(parseAction("window-consume-left", bind));

@@ -169,9 +169,10 @@ With horizontal workspaces, screen directions remain literal:
 - Up and down actions move between lanes.
 - Strip scroll actions toward up or left move toward strip start.
 
-Configurations using vertical strips usually bind wheel navigation to
-`window-focus-up` and `window-focus-down` instead of the default left and right
-actions.
+`window-focus-strip-previous` and `window-focus-strip-next` always move along
+the strip, whatever the output's orientation. The default `Mod+WheelUp` and
+`Mod+WheelDown` binds use them, so the wheel works the same on landscape and
+portrait outputs.
 
 ## Dwindle layout
 
